@@ -19,26 +19,44 @@
                 font-family: 'Open Sans', sans-serif;
             }
             .page-body h2,
-            .page-body p,
-            div#clock {
+            .page-body h3,
+            .page-body p {
                 color: #9ca69d;
             }
-            div#clock {
+            div#clock * {
+                color: #000 !important;
+            }
+            div#clock span {
                 font-size: 40px;
+            }
+            div.light {
+                background: #97b6ad;
+            }
+            div.wrapper {
+                width: 100%;
             }
         </style>
     </head>
     <body>
 
-        <div class="uk-padding uk-position-center">
+        <div class="uk-position-center wrapper">
             
             <div class="uk-text-center page-body">
-                <img src="assets/app/logo.svg" alt="Morris Care">
-                <h2>Shrewsbury's Radbrook Nursing Home introduces</h2>
-                <img class="uk-padding-small" width="200" src="assets/app/radbrook-logo.svg" alt="Radbrook Garden Suite">
-                <p>10 luxurious bedrooms with private louges and spa bathrooms</p>
+                <div class="uk-container uk-container-small uk-margin-bottom">
+                    <img src="assets/app/logo.svg" alt="Morris Care">
+                    <h2>Shrewsbury's Radbrook Nursing Home introduces</h2>
+                    <img class="uk-padding-small" width="200" src="assets/app/radbrook-logo.svg" alt="Radbrook Garden Suite">
+                    <p>10 luxurious bedrooms with private louges and spa bathrooms</p>
+                    <h3 class="uk-text-bold"><i>Join us here for an exclusive tour</i></h3>
+                    </div>
                 <br>
-                <div id="clock"></div>
+                
+                <div class="light uk-padding-small">
+                    <div class="uk-container uk-container-small">
+                        <div id="clock"></div>
+                    </div>
+                    
+                </div>
             </div>
 
         </div>
@@ -51,7 +69,7 @@
               if (event.elapsed) {
                 $this.html(event.strftime('...'));
               } else {
-                $this.html(event.strftime('<span>%w weeks and %d days<br/>%H Hours %M Minutes %S Seconds</span>'));
+                $this.html(event.strftime('<div class="uk-grid uk-grid-small uk-child-width-expand"><div><span>%w</span><p class="uk-margin-remove">weeks</p></div><div><span>%d</span><p class="uk-margin-remove">days</p></div><div><span>%H</span><p class="uk-margin-remove">hours</p></div><div><span>%M</span><p class="uk-margin-remove">min</p></div><div><span>%S</span><p class="uk-margin-remove">sec</p></div>'));
               }
             });
         </script>
