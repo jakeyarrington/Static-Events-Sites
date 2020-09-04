@@ -16,7 +16,8 @@
 		overwrite_session: 'Another person is currently viewing this page using the same token, would you like to continue?',
 		error_validation: 'An issue occurred when trying to validate your token.',
 		error_invalid_token: 'The token provided is invalid, please close this page and try again.',
-		error_loading_page: 'An error occured loading the page!'
+		error_loading_page: 'An error occured loading the page!',
+		ip_changed: 'Somebody else is using this token, please reload the page to gain access.'
 	};
 
 	var token = false;
@@ -44,7 +45,17 @@
 
 		if(token) {
 
-			firebase.database().ref('/users/' + token).once('value').then(function(e) {
+			const entry = firebase.database().ref('/users/' + token)
+			entry.on('child_changed', function(e) {
+			     var data = e.val();
+			     if(String(data.ip) !== ip) {
+			     	$('html > body').html('');
+			     	setTimeout(function() {
+			     		alert(lang.ip_changed);
+			     	}, 1000);
+			     }
+			});
+			entry.once('value').then(function(e) {
 				var data = e.val();
 				var overwrite = true;
 				var views = parseInt(data.count);
