@@ -46,15 +46,6 @@
 		if(token) {
 
 			const entry = firebase.database().ref('/users/' + token)
-			entry.on('child_changed', function(e) {
-			     var data = e.val();
-			     if(String(data.ip) !== ip) {
-			     	$('html > body').html('');
-			     	setTimeout(function() {
-			     		alert(lang.ip_changed);
-			     	}, 1000);
-			     }
-			});
 			entry.once('value').then(function(e) {
 				var data = e.val();
 				var overwrite = true;
@@ -88,6 +79,16 @@
 								error: function(e) {
 									alert(lang.error_loading_page);
 								}
+							});
+
+							entry.on('child_changed', function(e) {
+							     var data = e.val();
+							     if(String(data.ip) !== ip) {
+							     	$('html > body').html('');
+							     	setTimeout(function() {
+							     		alert(lang.ip_changed);
+							     	}, 1000);
+							     }
 							});
 
 						});
