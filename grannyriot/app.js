@@ -27,69 +27,71 @@
 	$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
 	  if(typeof data == 'object' && typeof data.ip !== 'undefined') {
 	  	ip = String(data.ip);
+
+	  	if(location.search.indexOf('?token') > -1) {
+			var args = location.search.replace('?', '').split('&');
+			for (var i = 0; i < args.length; i++) {
+				if(args[i].indexOf('=') > -1) {
+					var arg = args[i].split('=');
+					if($.trim(arg[0]) == 'token') {
+						token = $.trim(arg[1]);
+					}
+				}
+			}
+		} else {
+			token = window.prompt(lang.token_prompt);
+		}
+
+		if(token) {
+
+			firebase.database().ref('/users/' + token).once('value').then(function(e) {
+				var data = e.val();
+				var overwrite = true;
+				var views = parseInt(data.count);
+				var my_ip = String(data.ip);
+
+				if(my_ip !== ip) {
+					overwrite = confirm(lang.overwrite_session);
+				}
+
+				if(isNaN(views)) {
+					views = 0;
+				}
+
+				if(overwrite) {
+					firebase.database().ref('/users/' + token).set({
+						ip: ip,
+						count: parseInt(views) + 1
+					}).then(function(e) {
+
+						$.ajax({ 
+							url: './view.html', 
+							success: function(data) { 
+								$('body[app]').html(data); 
+							},
+							error: function(e) {
+								alert(lang.error_loading_page);
+							}
+						});
+
+					});
+				}
+
+
+
+			}).catch(function(e) {
+				console.log(e);
+				alert(lang.error_validation);
+			});
+
+		} else {
+			alert(lang.error_invalid_token);
+		}
+
 	  }
 	});
 
 
-	if(location.search.indexOf('?token') > -1) {
-		var args = location.search.replace('?', '').split('&');
-		for (var i = 0; i < args.length; i++) {
-			if(args[i].indexOf('=') > -1) {
-				var arg = args[i].split('=');
-				if($.trim(arg[0]) == 'token') {
-					token = $.trim(arg[1]);
-				}
-			}
-		}
-	} else {
-		token = window.prompt(lang.token_prompt);
-	}
-
-	if(token) {
-
-		firebase.database().ref('/users/' + token).once('value').then(function(e) {
-			var data = e.val();
-			var overwrite = true;
-			var views = parseInt(data.count);
-			var my_ip = String(data.ip);
-
-			if(my_ip !== ip) {
-				overwrite = confirm(lang.overwrite_session);
-			}
-
-			if(isNaN(views)) {
-				views = 0;
-			}
-
-			if(overwrite) {
-				firebase.database().ref('/users/' + token).set({
-					ip: ip,
-					count: parseInt(views) + 1
-				}).then(function(e) {
-
-					$.ajax({ 
-						url: './view.html', 
-						success: function(data) { 
-							$('body[app]').html(data); 
-						},
-						error: function(e) {
-							alert(lang.error_loading_page);
-						}
-					});
-
-				});
-			}
-
-
-
-		}).catch(function(e) {
-			console.log(e);
-			alert(lang.error_validation);
-		});
-
-	} else {
-		alert(lang.error_invalid_token);
-	}
 
 	
 
