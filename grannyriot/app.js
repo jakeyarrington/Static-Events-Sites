@@ -59,22 +59,29 @@
 				}
 
 				if(overwrite) {
-					firebase.database().ref('/users/' + token).set({
-						ip: ip,
-						count: parseInt(views) + 1
-					}).then(function(e) {
+					if(location.protocol == 'file:') {
+						$('html > body').html('<h1>Local test mode</h1>');
+						$('html').attr('app-loaded', 'true');
+					} else {
+						firebase.database().ref('/users/' + token).set({
+							ip: ip,
+							count: parseInt(views) + 1
+						}).then(function(e) {
 
-						$.ajax({ 
-							url: './view.html', 
-							success: function(data) { 
-								$('body[app]').html(data); 
-							},
-							error: function(e) {
-								alert(lang.error_loading_page);
-							}
+							$.ajax({ 
+								url: './view.html', 
+								success: function(data) { 
+									$('html > body').html(data);
+									$('html').attr('app-loaded', 'true'); 
+								},
+								error: function(e) {
+									alert(lang.error_loading_page);
+								}
+							});
+
 						});
-
-					});
+					}
+					
 				}
 
 
