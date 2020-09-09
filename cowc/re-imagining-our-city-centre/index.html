@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Re-imagining Our City Centre, Growing The Residential Market, Tuesday 22 September 2020, 2pm – 2.45pm - City of Wolverhampton Council</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Raleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CLato%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&ver=5.5.1" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/uikit/css/uikit.min.css" />
+        <script src="../assets/uikit/js/uikit.min.js"></script>
+        <script src="../assets/uikit/js/uikit-icons.min.js"></script>
+        <script src="../assets/jquery/jquery.min.js"></script>
+        <script src="../assets/countdown/countdown.min.js"></script>
+        <style>
+            body * {
+                font-family: 'Raleway', sans-serif;
+            }
+            header {
+                background-color: #1c1c1c;
+                text-align: center;
+                padding: 25px 0;
+            }
+            header img {
+                height: 90px;
+                width: auto;
+            }
+            .text-white {
+                color: #fff !important;
+            }
+            .page-body .orange {
+                color: #F5A36C;
+            }
+            div#clock * {
+                color: #fff !important;
+            }
+            div#clock span {
+                font-size: 40px;
+            }
+            div.light {
+                background: #F5A36C;
+            }
+            div.wrapper {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <img src="../assets/app/header.png" alt="INVEST City of Wolverhampton" width="470" height="106">
+        </header>
+
+        <div class="uk-position-center wrapper">
+            
+            <div class="uk-text-center page-body">
+                <div class="uk-container uk-container-small uk-margin-bottom">
+                    <img src="../assets/app/cowc-logo.png" alt="City of Wolverhampton">
+                    <h2 class="uk-text-bold uk-margin-remove-bottom">Re-imagining Our City Centre</h2>
+                    <h2 class="uk-text-bold uk-margin-remove-top orange">Growing The Residential Market</h2>
+                    <h3 class="uk-text-strong">Tuesday 22 September 2020<br/>2pm – 2.45pm</h3>
+                </div>
+
+                <br>
+                
+                <div class="light uk-padding-small">
+                    <div class="uk-container uk-container-small">
+                        <div id="clock"></div>
+                    </div>
+                    
+                </div>
+
+        </div>
+        <script>
+            var time = new Date('2020-09-22T14:00:00+01:00');
+            $('#clock').countdown(time, {elapse: false})
+            .on('update.countdown', function(event) {
+              var $this = $(this);
+              if (event.elapsed) {
+                $this.html(event.strftime('...'));
+              } else {
+                $this.html(event.strftime('<div class="uk-grid uk-grid-small uk-child-width-expand"><div><span>%w</span><p class="uk-margin-remove">weeks</p></div><div><span>%d</span><p class="uk-margin-remove">days</p></div><div><span>%H</span><p class="uk-margin-remove">hours</p></div><div><span>%M</span><p class="uk-margin-remove">min</p></div><div><span>%S</span><p class="uk-margin-remove">sec</p></div>'));
+              }
+            });
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57975487-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '');
+        </script>
+    </body>
+</html>

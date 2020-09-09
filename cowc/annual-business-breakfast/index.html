@@ -5,11 +5,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Raleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CLato%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&ver=5.5.1" rel="stylesheet">
-        <link rel="stylesheet" href="assets/uikit/css/uikit.min.css" />
-        <script src="assets/uikit/js/uikit.min.js"></script>
-        <script src="assets/uikit/js/uikit-icons.min.js"></script>
-        <script src="assets/jquery/jquery.min.js"></script>
-        <script src="assets/countdown/countdown.min.js"></script>
+        <link rel="stylesheet" href="../assets/uikit/css/uikit.min.css" />
+        <script src="../assets/uikit/js/uikit.min.js"></script>
+        <script src="../assets/uikit/js/uikit-icons.min.js"></script>
+        <script src="../assets/jquery/jquery.min.js"></script>
+        <script src="../assets/countdown/countdown.min.js"></script>
         <style>
             body * {
                 font-family: 'Raleway', sans-serif;
@@ -46,14 +46,14 @@
     <body>
 
         <header>
-            <img src="assets/app/header.png" alt="INVEST City of Wolverhampton" width="470" height="106">
+            <img src="../assets/app/header.png" alt="INVEST City of Wolverhampton" width="470" height="106">
         </header>
 
         <div class="uk-position-center wrapper">
             
             <div class="uk-text-center page-body">
                 <div class="uk-container uk-container-small uk-margin-bottom">
-                    <img src="assets/app/cowc-logo.png" alt="City of Wolverhampton">
+                    <img src="../assets/app/cowc-logo.png" alt="City of Wolverhampton">
                     <h2 class="uk-text-bold uk-margin-remove-bottom">Re-imagining Our City Centre</h2>
                     <h2 class="uk-text-bold uk-margin-remove-top orange">Growing The Residential Market</h2>
                     <h3 class="uk-text-strong">Tuesday 22 September 2020<br/>2pm – 2.45pm</h3>
@@ -70,7 +70,7 @@
 
         </div>
         <script>
-            var time = new Date('2020-09-22T14:00:00+01:00');
+            var time = new Date('2020-09-24T09:30:00+01:00');
             $('#clock').countdown(time, {elapse: false})
             .on('update.countdown', function(event) {
               var $this = $(this);
