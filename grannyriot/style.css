@@ -1,11 +1,8 @@
 html:not([app-loaded]) {
-	background: #000;
-	background-image: url(https://samherbert.net/svg-loaders/svg-loaders/tail-spin.svg);
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 100%;
+	background: #666;
+	font-family: 'Helvetica', Ariel, sans-serif;
 }
 
-html:not([app-loaded]) > body * {
+html:not([app-loaded]) > body main {
 	display: none;
 }
