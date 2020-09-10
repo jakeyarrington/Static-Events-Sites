@@ -116,6 +116,7 @@
 											     if(String(data.ip) !== ip) {
 											     	$('html > body > main').html('');
 											     	setTimeout(function() {
+											     		$('html').removeAttr('app-loaded');
 											     		return $.alert({
 									                    	title: 'Locked Out',
 									                    	content: '<p>Somebody else is using this token, please reload the page to gain access.</p>',
