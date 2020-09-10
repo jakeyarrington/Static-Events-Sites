@@ -70,7 +70,7 @@
 			                    return false;
 			                }
 
-			                var token = CryptoJS.MD5(email);
+			                var token = CryptoJS.MD5(email.toLowerCase());
 			                const entry = firebase.database().ref('/users/' + token)
 							entry.once('value').then(function(e) {
 								var data = e.val();
