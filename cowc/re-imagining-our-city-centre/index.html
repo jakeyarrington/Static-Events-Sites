@@ -76,7 +76,7 @@
             .on('update.countdown', function(event) {
               var $this = $(this);
               if (event.elapsed) {
-                $this.html(event.strftime('...'));
+                window.location.href = "./eventpage.html";
               } else {
                 $this.html(event.strftime('<div class="uk-grid uk-grid-small uk-child-width-expand"><div><span>%w</span><p class="uk-margin-remove">weeks</p></div><div><span>%d</span><p class="uk-margin-remove">days</p></div><div><span>%H</span><p class="uk-margin-remove">hours</p></div><div><span>%M</span><p class="uk-margin-remove">min</p></div><div><span>%S</span><p class="uk-margin-remove">sec</p></div>'));
               }
