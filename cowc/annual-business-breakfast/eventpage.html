@@ -27,12 +27,6 @@
         <script src="../../lib/EventBouncer/app.js"></script>
         <script>
         (function($) {
-
-            return $.alert({
-                title: 'Event not Begun',
-                content: '<p>This event has not yet begun, please come back soon.</p>',
-                useBootstrap: false
-            });
         
             EventBouncer.init(32, 'users', function(e) {
 
