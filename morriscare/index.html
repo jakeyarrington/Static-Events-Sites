@@ -67,9 +67,14 @@
         <script>
             var time = new Date('2020-09-24T14:00:00+01:00');
 
-            if((new Date().getTime()) > time.getTime()) {
-                window.location.href = "./eventpage.html";
-            }
+            var ticker = setInterval(function(){
+
+                if((new Date().getTime()) > time.getTime()) {
+                    clearInterval(ticker);
+                    window.location.href = "./eventpage.html";
+                }
+
+            }, 1000);
 
             $('#clock').countdown(time, {elapse: false})
             .on('update.countdown', function(event) {
