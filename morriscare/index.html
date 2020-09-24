@@ -66,9 +66,15 @@
 
         <script>
             var time = new Date('2020-09-24T14:00:00+01:00');
+
+            if((new Date().getTime()) > time.getTime()) {
+                window.location.href = "./eventpage.html";
+            }
+
             $('#clock').countdown(time, {elapse: false})
             .on('update.countdown', function(event) {
               var $this = $(this);
+              console.log(event);
               if (event.elapsed) {
                 window.location.href = "./eventpage.html";
               } else {
