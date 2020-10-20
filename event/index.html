@@ -9,6 +9,7 @@
         <script src="assets/uikit/js/uikit-icons.min.js"></script>
         <script src="assets/jquery/jquery.min.js"></script>
         <script src="assets/countdown/countdown.min.js"></script>
+        <script src="assets/app/app.js"></script>
         <style>
         	html,
         	body {
@@ -19,8 +20,12 @@
         </style>
 </head>
 <body>
-	<div class="uk-position-center">
+	<div id="loader" class="uk-position-center uk-text-center">
 		<span uk-spinner></span>
+	</div>
+	<div id="container" class="uk-text-center uk-padding-large uk-hidden">
+		<h1 class="title"></h1>
+		<div class="video"></div>
 	</div>
 </body>
 </html>
