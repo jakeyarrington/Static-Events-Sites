@@ -9,7 +9,7 @@
 		return show_message('Oh no, the URL is not valid, please close this window.');
 	}
 
-	var data = JSON.parse(btoa(window.location.search.replace('?id=', '')));
+	var data = JSON.parse(atob(window.location.search.replace('?id=', '')));
 
 	if(typeof data !== 'object') {
 		return show_message('Oh no, the URL provided is invalid, please close this window.');
