@@ -15,7 +15,9 @@
 		return show_message('Oh no, the URL provided is invalid, please close this window.');
 	}
 
-	$.get(data.url + '/wp-json/events/v1/get_event/' + data.id, function(data) {
+	var path = typeof data.is_product == 'undefined' ? 'get_event' : 'get_event_by_product';
+
+	$.get(data.url + '/wp-json/events/v1/' + path + '/' + data.id, function(data) {
 
 		var date = new Date(data.start_date);
 		var now = new Date();
