@@ -17,7 +17,7 @@
 
 	var path = typeof data.is_product == 'undefined' ? 'get_event' : 'get_event_by_product';
 
-	$.get(data.url + '/wp-json/events/v1/' + path + '/' + data.id, function(data) {
+	$.get(data.url + '/wp-json/events/v1/' + path + '/' + data.id + (typeof data.is_product == 'undefined' ? ('/' + data.event) : ''), function(data) {
 
 		var date = new Date(data.start_date);
 		var now = new Date();
