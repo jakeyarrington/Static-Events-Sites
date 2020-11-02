@@ -64,3 +64,22 @@ h3.info-date {
     color: #fff;
     display: inline-block;
 }
+
+html.event-page div.wrapper {
+    width: 100%;
+    height: 100%;
+    background-image: url(decoration.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50%;
+    margin-top: -40px;
+    padding-top: 20px;
+}
+
+html.event-page #curve {
+    height: 40px;
+}
+
+html.event-page header img {
+    height: 80px;
+}
