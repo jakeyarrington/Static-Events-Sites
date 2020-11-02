@@ -1,0 +1,67 @@
+html,
+body {
+	height: 100%;
+	overflow-y: hidden;
+}
+body * {
+    font-family: 'Quicksand', sans-serif;
+}
+header {
+    background-color: #00ABE5;
+    text-align: left;
+    padding-bottom: 0 !important;
+}
+header img {
+    height: 180px;
+    width: auto;
+}
+p {
+	color: #000;
+}
+.uk-container {
+	background: rgba(255,255,255,0.5);
+}
+#curve {
+	height: 103px;
+    transform: rotateY(180deg);
+    width:100%;
+    fill: #00ABE5;
+}
+#clock {
+	text-align: center;
+	background: #00ABE5;
+	
+}
+.text-white {
+    color: #fff !important;
+}
+.page-body .orange {
+    color: #F5A36C;
+}
+
+div#clock span {
+    font-size: 40px;
+}
+div#clock * {
+	color: #fff;
+}
+
+div.light {
+    background: #F5A36C;
+}
+div.wrapper {
+    width: 100%;
+    height: 100%;
+	background-image: url(decoration.png);
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: 50%;
+	margin-top: -100px;
+	padding-top: 150px;
+}
+h3.info-date {
+	padding: 16px 16px 16px 16px;
+    background-color: #0D5EA9;
+    color: #fff;
+    display: inline-block;
+}
