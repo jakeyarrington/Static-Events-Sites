@@ -1,0 +1,77 @@
+html,
+body {
+	height: 100%;
+}
+body * {
+    /* Font */
+}
+header {
+    background-color: #000000;
+    text-align: left;
+    padding-bottom: 0 !important;
+}
+header img {
+    height: 180px;
+    width: auto;
+}
+p {
+	color: #000;
+}
+.uk-container {
+	background: rgba(255,255,255,0.5);
+}
+#curve {
+	height: 103px;
+    transform: rotateY(180deg);
+    width:100%;
+    fill: #00ABE5;
+}
+.clock-container {
+    background: #21AAE1;
+}
+#clock {
+	text-align: center;
+	
+}
+.text-white {
+    color: #fff !important;
+}
+.page-body .orange {
+    color: #F5A36C;
+}
+
+div#clock span {
+    font-size: 40px;
+}
+div#clock * {
+	color: #fff;
+}
+
+div.light {
+    background: #F5A36C;
+}
+div.wrapper {
+   
+}
+h3.info-date {
+	padding: 16px 16px 16px 16px;
+    background-color: #0D5EA9;
+    color: #fff;
+    display: inline-block;
+}
+
+html.event-page div.wrapper {
+    
+}
+
+h2 {
+    color: #21AAE1;
+}
+
+html.event-page #curve {
+    height: 40px;
+}
+
+html.event-page header img {
+    height: 80px;
+}
