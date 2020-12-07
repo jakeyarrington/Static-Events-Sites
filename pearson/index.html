@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The 4 is Coming</title>
+	<meta name="theme-color" content="#000000">
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/countdown.min.js"></script>
+	<style>
+
+		@font-face {
+		    font-family: 'BMWTypeNext';
+		    src: url('font/BMWTypeNext-Thin.woff2') format('woff2'),
+		        url('font/BMWTypeNext-Thin.woff') format('woff'),
+		        url('font/BMWTypeNext-Thin.ttf') format('truetype');
+		    font-weight: 100;
+		    font-style: normal;
+		    font-display: swap;
+		}
+
+		@font-face {
+		    font-family: 'BMWTypeNext';
+		    src: url('font/BMWTypeNext-Regular.woff2') format('woff2'),
+		        url('font/BMWTypeNext-Regular.woff') format('woff'),
+		        url('font/BMWTypeNext-Regular.ttf') format('truetype');
+		    font-weight: normal;
+		    font-style: normal;
+		    font-display: swap;
+		}
+
+		@font-face {
+		    font-family: 'BMWTypeNext';
+		    src: url('font/BMWTypeNext-Light.woff2') format('woff2'),
+		        url('font/BMWTypeNext-Light.woff') format('woff'),
+		        url('font/BMWTypeNext-Light.ttf') format('truetype');
+		    font-weight: 300;
+		    font-style: normal;
+		    font-display: swap;
+		}
+
+		@font-face {
+		    font-family: 'BMWTypeNext';
+		    src: url('font/BMWTypeNext-Bold.woff2') format('woff2'),
+		        url('font/BMWTypeNext-Bold.woff') format('woff'),
+		        url('font/BMWTypeNext-Bold.ttf') format('truetype');
+		    font-weight: bold;
+		    font-style: normal;
+		    font-display: swap;
+		}
+
+		html,
+		body {
+			background: #000;
+			font-weight: 100;
+		}
+
+
+		@keyframes fade_in {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}	
+
+		#copy {
+			z-index: 2;
+		}
+
+		#copy h1 {
+			font-size: 6rem;
+		}
+
+		#copy h2 {
+			font-size: 2.3rem;
+		}
+
+		#copy h1,
+		#copy h2 {
+			font-weight: 100;
+		}
+
+		#copy h1,
+		#copy h2,
+		#copy #clock {
+			font-family: 'BMWTypeNext';	
+			color: #fff;
+		}
+
+		#copy #clock {
+			font-weight: 300;
+			font-size: 2rem;
+		}
+
+		#copy #clock p {
+			font-size: 1rem;
+		}
+
+		#bmw-logo {
+			width: 100px;
+		}
+
+		.uk-button-primary,
+		.uk-button-primary:hover,
+		.uk-button-primary:active,
+		.uk-button-primary:focus {
+			background-color: #016eb9;
+		}
+
+		.smoke-container {
+			opacity: 0;
+			animation-name: fade_in;
+			animation-delay: 2s;
+			animation-duration: 5s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: 1;
+			position: relative;
+			z-index: 1;
+		}
+
+		.bmw4-container {
+			opacity: 0;
+			animation-name: fade_in;
+			animation-delay: 1s;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: 1;
+		}
+
+		.smoke-container #smoke {
+			object-fit: cover;
+		}
+
+		.uk-animation-slide-bottom-small {
+			animation-duration: 4s;
+			animation-delay: 4s;
+		}
+
+		@media screen and (max-width: 900px) {
+			#copy h1 {
+				font-size: 4rem;
+			}
+
+			#copy h2 {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media screen and (max-width: 720px) {
+			.smoke-container #smoke {
+				opacity: 0.9;
+			}
+
+			#copy h1 {
+				font-size: 3rem;
+			}
+
+			#copy h2 {
+				font-size: 1.2rem;
+			}
+
+			#copy #clock span {
+				font-size: 1.3rem;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div id="copy" class="uk-container uk-animation-slide-bottom-small uk-margin-auto uk-padding-large uk-text-center uk-position-z-index uk-position-relative">
+		<div class="uk-grid uk-width-auto uk-text-left">
+			<div class="uk-width-auto@m">
+				<img src="images/bmw-logo.png" class="uk-margin-bottom" id="bmw-logo" alt="BMW 4">
+			</div>
+			<div class="uk-width-expand">
+				<h2 class="uk-text-uppercase uk-text-large uk-margin-small-top">Missed our Virtual Launch event?<br/>It’s not too late to see everything the all-new 4 Series has to offer. Click the link below to watch our 4 Series Launch Video.</h2>
+				<h2><a href="https://www.youtube.com/watch?v=uFKj6M7K8dg&feature=youtu.be" class="uk-button uk-button-large uk-button-primary">WATCH NOW</a></h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="uk-position-bottom-right uk-padding uk-position-z-index uk-animation-slide-bottom-small">
+		<img src="images/TUDM.png" alt="">
+	</div>
+
+	<div class="uk-overflow-hidden uk-height-1-1 uk-width-1-1 uk-position-top-right">
+		<div class="smoke-container uk-height-1-1">
+			<img id="smoke" src="images/smoke.png" alt="BMW 4 Coupe" class="uk-animation-reverse uk-animation-kenburns uk-width-1-1 uk-height-1-1">
+		</div>
+		<div class="bmw4-container uk-width-1-1">
+			<img id="bmw4" src="images/bmw-4-coupe.png" alt="BMW 4 Coupe" class=" uk-position-bottom-right uk-animation-fade">
+		</div>
+	</div>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-29HWSXL1EM"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-29HWSXL1EM');
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'BMWTypeNext';
+    src: url('BMWTypeNext-Thin.eot') format('eot');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BMWTypeNext';
+    src: url('BMWTypeNext-Regular.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BMWTypeNext';
+    src: url('BMWTypeNext-Light.eot') format('eot');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BMWTypeNext';
+    src: url('BMWTypeNext-Bold.eot') format('eot');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
