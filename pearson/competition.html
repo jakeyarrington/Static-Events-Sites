@@ -33,13 +33,16 @@
 
 		body {
 			/*background: #d4eae4;*/
+			height: 100vh;
+
+			background-size: 100%;
+			background-position: bottom;
+			background-repeat: no-repeat;
 		}
 
 		html {
 			background: #d4eae4;
-			background-image: url(images/background.jpg);
-			background-size: cover;
-			background-repeat: no-repeat;
+
 		}
 
 		html:before {
@@ -54,7 +57,9 @@
 			
 		}
 
-
+		#pearson-logo {
+				width: 250px;
+			}
 			
 
 		#copy {
@@ -149,8 +154,33 @@
 			background-color: rgba(0,0,0,0.5);
 
 		}
-
-
+		#logo-bar{
+			background: #ffffff;
+		}
+		.uk-card-default{
+			box-shadow: none !important;
+		}
+		#pearson-logo {
+				width: 250px;
+			}
+			#pcl-logo {
+				width: 250px;
+			}
+			#babington-logo {
+				width: 250px;
+			}
+			#stuk-logo {
+				width: 250px;
+			}
+			#london-logo{
+				width: 250px;
+			}
+			.box-card{
+				vertical-align: middle;
+			}
+			.uk-card-body {
+    padding: 30px 40px;
+}
 
 		@media screen and (max-width: 900px) {
 			#copy h1 {
@@ -168,11 +198,19 @@
 			}
 
 			#pearson-logo {
-				width: 150px;
+				width: 250px;
 			}
-
-			#rybrook-logo {
-				width: 100px;
+			#pcl-logo {
+				width: 250px;
+			}
+			#babington-logo {
+				width: 250px;
+			}
+			#stuk-logo {
+				width: 250px;
+			}
+			#london-logo{
+				width: 250px;
 			}
 
 			#copy h1 {
@@ -190,6 +228,9 @@
 			.uk-button-primary {
 				padding: 0 10px;
 			}
+			#enter-prize-draw{
+				width: 100%;
+			}
 		}
 
 	</style>
@@ -198,25 +239,35 @@
 	
 	<div id="copy" class="uk-container uk-animation-slide-bottom-small uk-margin-auto uk-padding-large uk-text-center uk-position-z-index uk-position-relative">
 		<div class="uk-grid uk-width-auto uk-text-left">
-			<div class="uk-width-1-4 uk-margin-small-bottom">
+			<div class="uk-width-1-1 uk-width-1-1@s uk-margin-small-bottom">
 				<img src="images/pearson-logo.png" class="uk-margin-bottom" id="pearson-logo" alt="pearson logo">
 				
 			</div>
-			<div class="uk-width-1-2 uk-text-right">
-				
-			</div>
-			<div class="uk-width-1-1 uk-margin-medium-bottom">
-				<div class="uk-width-1-1 uk-height-large uk-position-relative uk-light" id="video">
-					<iframe src="" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+		
+			<div class="uk-width-1-1 uk-width-1-1@s uk-margin-medium-bottom">
+				<div class="uk-width-1-1 uk-position-relative uk-light" id="video">
+					<!--player code begin-->
+<div id="svp_playerd59pt84rk9kc" style="width:100%;height:810px;position:relative;">
+</div>
+<script language="javascript" type="text/javascript" src="//play.webvideocore.net/js/dplayer.js"></script>
+<script language="javascript">
+<!--
+var vars = {clip_id:"d59pt84rk9kc",transparent:"true",pause:"1",repeat:"",bg_color:"#dadada",fs_mode:"2",no_controls:"",start_img:"0",start_volume:"100",close_button:"",brand_new_window:"1",auto_hide:"1",stretch_video:"1",player_align:"NONE",offset_x:"0",offset_y:"0",player_color_ratio:0.6,skinAlpha:"50",colorBase:"#000000",colorIcon:"#ffffff",colorHighlight:"#5cbbf5",direct:"false",is_responsive:"true",viewers_limit:0,cc_position:"bottom",cc_positionOffset:70,cc_multiplier:0.03,cc_textColor:"#ffffff",cc_textOutlineColor:"#ffffff",cc_bkgColor:"#000000",cc_bkgAlpha:0.1,aspect_ratio:"16:9",play_button:"1",play_button_style:"static",sleek_player:"0",floating_player:"none"};
+var svp_player = new SVPDynamicPlayer("svp_playerd59pt84rk9kc", "", "100%", "100%", {use_div:"svp_playerd59pt84rk9kc",skin:"3"}, vars);
+svp_player.execute();
+//-->
+</script>
+<noscript>Your browser does not support JavaScript! JavaScript is needed to display this video player.</noscript>
+<!--player code end-->
 				</div>
 			</div>
-			<div class="uk-width-1-2" id="enter-prize-draw">
+			<div class="uk-width-1-2 uk-width-1-1@s" id="enter-prize-draw">
 				<h2 class="uk-text-medium">Leave your words of support and messages of congratulations</h2>
 				
 				<form action="https://submit-form.com/vxrlxg7o" target="_self" id="message_form">
 				   <div class="">
 						<div class="uk-width-expand@m uk-width-1-1@s marg-bt">
-							<input type="hidden" name="_redirect" value="https://yarringtonevents.uk/pearson/competition.html"/>
+							<input type="hidden" name="_redirect" value="https://yarringtonevents.uk/pearson/index.html"/>
 							<input name="email" type="email" required="required" class="uk-input uk-text-uppercase uk-form-large" placeholder="Enter Email Address"/>
 							
 						</div>
@@ -235,6 +286,7 @@
 			
 		</div>
 	</div>
+
 	<script>
 
 
@@ -273,5 +325,40 @@
 	  gtag('config', 'G-29HWSXL1EM');
 	</script>
 
+
+<footer>
+		<div id="logo-bar" class="uk-child-width-expand@m uk-text-center" uk-grid>
+		<div class="box-card">
+		<div class="uk-card uk-card-default uk-card-body">
+			
+		</div>
+		</div>
+		<div class="box-card">
+		<div class="uk-card uk-card-default uk-card-body">
+			<img src="images/bab.png"  id="babington-logo" alt="babington logo">
+		</div>
+		</div>
+		<div class="box-card">
+		<div class="uk-card uk-card-default uk-card-body">
+			<img src="images/pcl.png"  id="pcl-logo" alt="pcl logo">
+		</div>
+		</div>
+		<div class="box-card">
+		<div class="uk-card uk-card-default uk-card-body">
+			<img src="images/ap-lon.png"  id="london-logo" alt="London Ambassador Network">
+		</div>
+		</div>
+		<div class="box-card">
+		<div class="uk-card uk-card-default uk-card-body">
+			<img src="images/stuk.png"  id="stuk-logo" alt="stuk logo">
+		</div>
+		</div>
+		<div class="box-card">
+		<div class="uk-card uk-card-default uk-card-body">
+			
+		</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>
