@@ -60,10 +60,37 @@
 }
 .uk-button-default:focus, .uk-button-default:hover{background-color: #727272 !important;
 color: #ffffff !important;}
+
+
+
+}
+            .top-banner{
+                background-image: url("https://yarringtonevents.uk/nyr/assets/Spring-Launch_2000x1000-resized.png");
+                background-position: center top;
+                background-size: cover;
+                background-repeat: no-repeat;
+                min-height:600px;
+                height: 700px;
+                padding-bottom: 10px;
+            }
+            footer{
+                background-color: #19233E;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                margin-top: 50px;
+                text-align: center;
+            }
+    @media screen and (max-width: 720px) {
+            .top-banner{
+                min-height: 400px !important;
+                height: 400px !important; 
+
+            }
+        }
         </style>
     </head>
     <body>
-
+<div class="top-banner"></div>
       <div id="copy" class="uk-container uk-animation-slide-bottom-small uk-margin-auto uk-padding-large uk-text-center uk-position-z-index uk-position-relative">
         <div class="uk-grid uk-width-auto uk-text-left">
                 <div class="uk-container uk-container-small uk-margin-bottom">
@@ -102,6 +129,11 @@ color: #ffffff !important;}
         </div>
 
     </div>
+            <footer>
+            <div>
+                <img class="uk-align-center"src="https://yesdeck.co.uk/nyr/wp-content/uploads/2020/12/new-white-logo.svg" alt="" width="350px">
+            </div>
+        </footer>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57975487-3"></script>
