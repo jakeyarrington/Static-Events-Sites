@@ -1,354 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Apprentice Celebration</title>
-	<meta name="theme-color" content="#000000">
-	<!-- UIkit CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
+<html>
+    <head>
+        <title>NYR Spring Launch</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/uikit/css/uikit.min.css" />
+        <script src="assets/uikit/js/uikit.min.js"></script>
+        <script src="assets/uikit/js/uikit-icons.min.js"></script>
+        <script src="assets/jquery/jquery.min.js"></script>
+        <script src="assets/countdown/countdown.min.js"></script>
+        <style>
+            html,
+            body {
+                background-color: #fff;
+            }
+            body * {
+                font-family: "Playfair Display", Sans-serif;
+            }
+            .text-white {
+                color: #727272 !important;
+            }
+            h2{
+                margin-top: 30px;
+                font-size: 42px;
+            }
+            h3{
+              margin-top: 0px;  
+            }
+            h4,
+            h2,
+            h3,
+             p {
+                color: #727272 !important;
+            }
+            div#clock * {
+                color: #fff !important;
+            }
+            .page-body{
+                min-height:350px;
+            }
+            div#clock span {
+                font-size: 40px;
+            }
+            div.light {
+                background: #727272;
+            }
+            div.wrapper {
+                width: 100%;
+                margin-top:0px !important;
+            }
+            .top-banner{
+                background-image: url("https://yarringtonevents.uk/nyr/assets/Spring-Launch_2000x1000-resized.png");
+                background-position: center top;
+                background-size: cover;
+                background-repeat: no-repeat;
+                min-height:600px;
+                height: 650px;
+                padding-bottom: 10px;
+            }
+            footer{
+                background-color: #19233E;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                margin-top: 50px;
+                text-align: center;
+            }
+    @media screen and (max-width: 720px) {
+            .top-banner{
+                min-height: 400px !important;
+                height: 400px !important; 
 
-	<!-- UIkit JS -->
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/countdown.min.js"></script>
-	<script language="javascript" type="text/javascript" src="https://play.webvideocore.net/js/dplayer.js"></script>
-	<script>
-		//window.location = '/';
-	</script>
-	<style>
+            }
+        }
 
+        </style>
+    </head>
+    <body>
 
-		@keyframes fade_in {
-			0% { opacity: 0; }
-			100% { opacity: 0.4; }
-		}
+        <div class="wrapper">
+            <div class="top-banner">
+            
+        </div>
+            <div class="uk-text-center page-body">
+                <div class="uk-container uk-container-small uk-margin-bottom">
+                    
+                    
+                    <h2>Monday 8 March</h2>
+                    <h3 class="text-white">Join us here for an exclusive event</h3>
+                    </div>
+                <br>
+                
+                <div class="light uk-padding-small">
+                    <div class="uk-container uk-container-small">
+                        <div id="clock"></div>
+                    </div>
+                </div>
+            </div>
 
-		html,
-		body {
-			font-weight: 100;
-			margin: 0;
-		}
+        </div>
+        <footer>
+            <div>
+                <img class="uk-align-center"src="https://yesdeck.co.uk/nyr/wp-content/uploads/2020/12/new-white-logo.svg" alt="" width="350px">
+            </div>
+        </footer>
 
-		body {
-			/*background: #d4eae4;*/
-			height: 100vh;
+        <script>
+            var time = new Date('Mon Mar 08 2021 15:30:00 GMT-0000');
 
-			background-size: 100%;
-			background-position: bottom;
-			background-repeat: no-repeat;
-		}
+            var ticker = setInterval(function(){
 
-		html {
-			background: #d4eae4;
+                if((new Date().getTime()) > time.getTime()) {
+                    clearInterval(ticker);
+                    window.location.href = "./eventpage.html";
+                }
 
-		}
+            }, 1000);
 
-		html:before {
-			content: '';
-			position: absolute;
-			z-index: 0;
-			
-			
-			width: 100%;
-			height: 100%;
-			
-			
-		}
+            $('#clock').countdown(time, {elapse: false})
+            .on('update.countdown', function(event) {
+              var $this = $(this);
+              console.log(event);
+              if (event.elapsed) {
+                window.location.href = "./eventpage.html";
+              } else {
+                $this.html(event.strftime('<div class="uk-grid uk-grid-small uk-child-width-expand"><div><span>%w</span><p class="uk-margin-remove">weeks</p></div><div><span>%d</span><p class="uk-margin-remove">days</p></div><div><span>%H</span><p class="uk-margin-remove">hours</p></div><div><span>%M</span><p class="uk-margin-remove">min</p></div><div><span>%S</span><p class="uk-margin-remove">sec</p></div>'));
+              }
+            });
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57975487-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-		#pearson-logo {
-				width: 250px;
-			}
-			
-
-		#copy {
-			z-index: 2;
-		}
-
-		#copy h1 {
-			font-size: 6rem;
-		}
-
-		#copy h2 {
-			font-size: 2.3rem;
-		}
-
-		#copy h1,
-		#copy h2 {
-			font-weight: 100;
-		}
-
-		#copy h1,
-		#copy h2,
-		#copy h3,
-		#copy p,
-		#copy #clock,
-		#copy a {
-			font-family: 'Open Sans','Helvetica','Verdana',sans-serif;
-			color: #232120;
-		}
-
-		#copy #clock {
-			font-weight: 300;
-			font-size: 2rem;
-		}
-
-		#copy #clock p {
-			font-size: 1rem;
-		}
-
-
-		.smoke-container {
-			opacity: 0;
-			animation-name: fade_in;
-			animation-delay: 2s;
-			animation-duration: 5s;
-			animation-fill-mode: forwards;
-			animation-iteration-count: 1;
-			position: relative;
-			z-index: 1;
-		}
-
-		.bmw4-container {
-			opacity: 0;
-			animation-name: fade_in;
-			animation-delay: 1s;
-			animation-duration: 2s;
-			animation-fill-mode: forwards;
-			animation-iteration-count: 1;
-		}
-
-		.smoke-container #smoke {
-			object-fit: cover;
-		}
-
-		.uk-button-primary,
-		.uk-button-primary:hover,
-		.uk-button-primary:active,
-		.uk-button-primary:focus {
-			background-color: #232120;
-		}
-
-		.uk-button-default,
-		.uk-button-default:hover,
-		.uk-button-default:focus,
-		.uk-button-default:active {
-			color: #fff;
-			background-color: #232120;
-		}
-
-		.uk-input,
-		.uk-input:hover,
-		.uk-input:active,
-		.uk-input:focus {
-			border: 0;
-		}
-		.uk-textarea{
-			min-height: 150px;
-		}
-		.marg-bt{
-			margin-bottom: 10px;
-		}
-		#video {
-			background-color: rgba(0,0,0,0.5);
-
-		}
-		#logo-bar{
-			background: #ffffff;
-		}
-		.uk-card-default{
-			box-shadow: none !important;
-		}
-		#pearson-logo {
-				width: 250px;
-			}
-			#pcl-logo {
-				width: 250px;
-			}
-			#babington-logo {
-				width: 250px;
-			}
-			#stuk-logo {
-				width: 250px;
-			}
-			#london-logo{
-				width: 250px;
-			}
-			.box-card{
-				vertical-align: middle;
-			}
-			.uk-card-body {
-    padding: 30px 40px;
-}
-
-		@media screen and (max-width: 900px) {
-			#copy h1 {
-				font-size: 4rem;
-			}
-
-			#copy h2 {
-				font-size: 1.5rem;
-			}
-		}
-
-		@media screen and (max-width: 720px) {
-			.smoke-container #smoke {
-				opacity: 0.9;
-			}
-
-			#pearson-logo {
-				width: 250px;
-			}
-			#pcl-logo {
-				width: 250px;
-			}
-			#babington-logo {
-				width: 250px;
-			}
-			#stuk-logo {
-				width: 250px;
-			}
-			#london-logo{
-				width: 250px;
-			}
-
-			#copy h1 {
-				font-size: 3rem;
-			}
-
-			#copy h2 {
-				font-size: 1.2rem;
-			}
-
-			#copy #clock span {
-				font-size: 1.3rem;
-			}
-
-			.uk-button-primary {
-				padding: 0 10px;
-			}
-			#enter-prize-draw{
-				width: 100%;
-			}
-		}
-
-	</style>
-</head>
-<body>
-	
-	<div id="copy" class="uk-container uk-animation-slide-bottom-small uk-margin-auto uk-padding-large uk-text-center uk-position-z-index uk-position-relative">
-		<div class="uk-grid uk-width-auto uk-text-left">
-			<div class="uk-width-1-1 uk-width-1-1@s uk-margin-small-bottom">
-				<img src="images/pearson-logo.png" class="uk-margin-bottom" id="pearson-logo" alt="pearson logo">
-				
-			</div>
-		
-			<div class="uk-width-1-1 uk-width-1-1@s uk-margin-medium-bottom">
-				<div class="uk-width-1-1 uk-position-relative uk-light" id="video">
-					
-
-					<div class="vimeo-space" style="padding: 56.25% 0 0 0; position: relative;"><iframe src="https://player.vimeo.com/video/491313315" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-				</div>
-			</div>
-			<div class="uk-width-1-2 uk-width-1-1@s" id="enter-prize-draw">
-				<h2 class="uk-text-medium">Leave your words of support and messages of congratulations</h2>
-				
-				<form action="https://submit-form.com/vxrlxg7o" target="_self" id="message_form">
-				   <div class="">
-						<div class="uk-width-expand@m uk-width-1-1@s marg-bt">
-							<input type="hidden" name="_redirect" value="https://yarringtonevents.uk/pearson/index.html"/>
-							<input name="email" type="email" required="required" class="uk-input uk-text-uppercase uk-form-large" placeholder="Enter Email Address"/>
-							
-						</div>
-						<div class="uk-width-expand@m uk-width-1-1@s marg-bt">
-							<textarea name="message" form="message_form" class="uk-textarea uk-text-uppercase uk-form-large" placeholder="Leave a Message"></textarea>
-						</div>
-						<div class="uk-width-auto@m uk-width-1-1@s ">
-							<button class="uk-button uk-button-default uk-height-1-1">Submit</button>
-						</div>
-					</div>
-				</form>
-			</div>
-			<div id="prize-draw-entered" class="uk-width-1-1 uk-text-center uk-hidden">
-				<p>Thank you for your message</p>
-			</div>
-			
-		</div>
-	</div>
-
-	<script>
-
-
-		// function play_video() {
-		// 	var player = 'svp_player23m5d5ugwyck';
-		// 	var vars = {clip_id:"23m5d5ugwyck",transparent:"true",pause:"1",repeat:"",bg_color:"#dadada",fs_mode:"2",no_controls:"",start_img:"0",start_volume:"100",close_button:"",brand_new_window:"1",auto_hide:"1",stretch_video:"1",player_align:"NONE",offset_x:"0",offset_y:"0",player_color_ratio:0.6,skinAlpha:"50",colorBase:"#000000",colorIcon:"#ffffff",colorHighlight:"#5cbbf5",direct:"false",is_responsive:"true",viewers_limit:0,cc_position:"bottom",cc_positionOffset:70,cc_multiplier:0.03,cc_textColor:"#ffffff",cc_textOutlineColor:"#ffffff",cc_bkgColor:"#000000",cc_bkgAlpha:0.1,aspect_ratio:"16:9",play_button:"1",play_button_style:"static",sleek_player:"0"};
-
-		// 		$('#video').removeClass('uk-height-large');
-		// 		$('#play-video').addClass('uk-hidden');
-		// 		$('#' + player).removeClass('uk-hidden');
-
-		// 		var svp_player = new SVPDynamicPlayer(player, "", "100%", "100%", {use_div:"svp_player23m5d5ugwyck",skin:"3"}, vars);
-		// 		svp_player.execute();
-		// }
-
-		// $('#play-video').on('click', function(e) {
-		// 	e.preventDefault();
-		// 	play_video();
-		// });
-
-		// if(location.hash == '#prize_draw') {
-		// 	$('div#enter-prize-draw').addClass('uk-hidden');
-		// 	$('div#prize-draw-entered').removeClass('uk-hidden');
-		// }
-
-		// play_video();
-
-	</script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-29HWSXL1EM"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-29HWSXL1EM');
-	</script>
-
-
-<footer>
-		<div id="logo-bar" class="uk-child-width-expand@m uk-text-center" uk-grid>
-		<div class="box-card">
-		<div class="uk-card uk-card-default uk-card-body">
-			
-		</div>
-		</div>
-		<div class="box-card">
-		<div class="uk-card uk-card-default uk-card-body">
-			<img src="images/bab.png"  id="babington-logo" alt="babington logo">
-		</div>
-		</div>
-		<div class="box-card">
-		<div class="uk-card uk-card-default uk-card-body">
-			<img src="images/pcl.png"  id="pcl-logo" alt="pcl logo">
-		</div>
-		</div>
-		<div class="box-card">
-		<div class="uk-card uk-card-default uk-card-body">
-			<img src="images/ap-lon.png"  id="london-logo" alt="London Ambassador Network">
-		</div>
-		</div>
-		<div class="box-card">
-		<div class="uk-card uk-card-default uk-card-body">
-			<img src="images/stuk.png"  id="stuk-logo" alt="stuk logo">
-		</div>
-		</div>
-		<div class="box-card">
-		<div class="uk-card uk-card-default uk-card-body">
-			
-		</div>
-		</div>
-	</div>
-</footer>
-</body>
+          gtag('config', 'UA-57975487-3');
+        </script>
+    </body>
 </html>
