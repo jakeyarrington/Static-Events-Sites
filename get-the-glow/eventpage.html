@@ -70,14 +70,18 @@
                         color: #ffffff !important;
             }
             .top-banner{
-                background-image: url("https://nyrevents.co.uk/wp-content/uploads/2021/05/Get-The-Glow-image2.png");
                 background-color: #CBCBCB;
                 background-position: right top;
-                background-size: contain;
+                background-size: cover;
                 background-repeat: no-repeat;
-                min-height:600px;
-                height: 650px;
-                padding-bottom: 10px;
+
+            }
+             img.desktop{
+                display: block;
+                width: 100%;
+            }
+            img.mobile{
+                display: none;
             }
             footer{
                 background-color: #202766;
@@ -87,16 +91,18 @@
                 text-align: center;
             }
     @media screen and (max-width: 720px) {
-            .top-banner{
-                min-height: 400px !important;
-                height: 400px !important; 
-
+               img.desktop{
+                display: none;
+            }
+            img.mobile{
+                display: block;
+                width: 100%;
             }
         }
         </style>
     </head>
     <body>
-<div class="top-banner"></div>
+<div class="top-banner"><img class="desktop"src="https://nyrevents.co.uk/wp-content/uploads/2021/05/Get-The-Glow-image2.png"/><img class="mobile"src="https://nyrevents.co.uk/wp-content/uploads/2021/05/Get-The-Glow-image.png"/></div>
       <div id="copy" class="uk-container uk-animation-slide-bottom-small uk-margin-auto uk-padding-large uk-text-center uk-position-z-index uk-position-relative">
         <div class="uk-grid uk-width-auto uk-text-left">
                 <div class="uk-container uk-container-small uk-margin-bottom">
