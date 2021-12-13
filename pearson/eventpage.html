@@ -255,12 +255,12 @@
 			</div>
 		
 			<div class="uk-width-1-1 uk-width-1-1@s uk-margin-medium-bottom">
-				<!-- <div class="uk-width-1-1 uk-position-relative uk-light" id="video">
+				<div class="uk-width-1-1 uk-position-relative uk-light" id="video">
 					
 
 					<div class="vimeo-space" style="padding: 56.25% 0 0 0; position: relative;"><iframe src="https://player.vimeo.com/video/491313315" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-				</div> -->
-				<div id="clock"></div>
+				</div>
+				
 			</div>
 			<div class="uk-width-1-2 uk-width-1-1@s" id="enter-prize-draw">
 				<h2 class="uk-text-medium">Leave your words of support and messages of congratulations</h2>
@@ -287,30 +287,7 @@
 			
 		</div>
 	</div>
-	 <script>
-            var time = new Date('2021-12-16T14:00:00+01:00');
-
-            var ticker = setInterval(function(){
-
-                if((new Date().getTime()) > time.getTime()) {
-                    clearInterval(ticker);
-                    window.location.href = "./eventpage.html";
-                }
-
-            }, 1000);
-
-            $('#clock').countdown(time, {elapse: false})
-            .on('update.countdown', function(event) {
-              var $this = $(this);
-              console.log(event);
-              if (event.elapsed) {
-                window.location.href = "./eventpage.html";
-              } else {
-                $this.html(event.strftime('<div class="uk-grid uk-grid-small uk-child-width-expand"><div><span>%d</span><p class="uk-margin-remove">days</p></div><div><span>%H</span><p class="uk-margin-remove">hours</p></div><div><span>%M</span><p class="uk-margin-remove">min</p></div><div><span>%S</span><p class="uk-margin-remove">sec</p></div>'));
-              }
-            });
-        </script>
-	<script>
+	
 
 
 		// function play_video() {
